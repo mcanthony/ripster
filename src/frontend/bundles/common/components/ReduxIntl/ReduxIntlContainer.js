@@ -4,7 +4,7 @@ import { IntlProvider } from 'react-intl';
 
 export default compose(
   connect(
-    state => ({
+    state => (console.log(state), {
       ...state.locale,
       key: state.locale.locale,
     })

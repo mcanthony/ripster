@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
-const babelPluginRelay = require('../babelPluginRelay');
 const babelPluginReactTransform = require('babel-plugin-react-transform');
 
 const config = require('../config');
@@ -81,11 +80,7 @@ module.exports = Object.assign({}, base, {
   }(),
 
   babel: () => {
-    let babel = Object.assign({}, base.babel, {
-      plugins: [
-        babelPluginRelay,
-      ],
-    });
+    let babel = {};
 
     if (config.hot) {
       babel = Object.assign({}, babel, {
